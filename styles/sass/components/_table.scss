@@ -65,6 +65,15 @@ table{
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 2;
     }
+    a{
+      color: var(--primary);
+      @include respond-lg{
+        &:hover{
+          color: var(--primary-light);
+          text-decoration: underline;
+        }
+      }
+    }
   }
   thead{
     position: sticky;

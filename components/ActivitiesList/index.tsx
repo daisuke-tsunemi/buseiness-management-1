@@ -11,16 +11,16 @@ const columns: Column<Activity>[] = [
   {
     header: '活動日時',
     cell: (activity) => (
-      <Link href={`/activities/${activity.id}`} className="c-heading--sm">
+      <p className='c-txt__sm'>
         {formatDateTime(activity.activatedAt) ?? EMPTY_LABEL}
-      </Link>
+      </p>
     ),
   },
   {
     header: '案件名',
     cell: (activity) =>
       activity.deals ? (
-        <Link href={`/deals/${activity.deals.id}`}>{activity.deals.title}</Link>
+        <Link href={`/deals/${activity.deals.id}`} className="c-heading--sm">{activity.deals.title}</Link>
       ) : (
         <span>{EMPTY_LABEL}</span>
       ),

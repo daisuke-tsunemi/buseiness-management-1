@@ -30,11 +30,6 @@
 			background-color: var(--primary-light);
 		}
 	}
-	// &[target=_blank]{
-	// 	&:after{
-	// 		background-image:url(../img/common/icon/white/blank.svg);
-	// 	}
-	// }
 }
 [class*="c-btn"]{
 	// サイズ
@@ -75,39 +70,6 @@
 }
 .c-btn{
 	@extend %c-btn;
-	&__text{
-		font-weight: 500;
-		font-size: 1em;
-		color:var(--primary);
-		padding:0 2px;
-		gap: .25rem;
-		text-decoration: underline;
-		background-color: transparent;
-		svg{
-			fill: #fff;
-		}
-    @include respond-md {
-			&:hover{
-				color: var(--primary);
-			}
-		}
-	}
-	&__textWhite{
-		display: inline-flex;
-		align-items:center;
-		font-size: .825rem;
-		font-weight: 500;
-		color:#fff;
-		padding:0 2px;
-		gap: .25rem;
-		text-decoration: underline;
-		background-color: transparent;
-		@include respond-md {
-			&:hover{
-				color: var(--text-weak);
-			}
-		}
-	}
 	&__line{
 		@extend %c-btn;
 		background-color: transparent;
@@ -196,8 +158,8 @@
 			}
 		}
 	}
-  &__back{
-		padding: .25rem;
+	&__back{
+	padding: .25rem;
     aspect-ratio: 1;
     height: 28px;
 		border: 1px solid #fff;

@@ -16,13 +16,13 @@ const columns: Column<Deal>[] = [
   {
     header: '案件名／作成日',
     cell: (deal, index) => (
-      <Link href={`/deals/${deal.id}`} className="u-align u-gap4">
+      <Link href={`/deals/${deal.id}`} className="u-align u-gap4 ">
         <Thumbnail image={deal.eyecatch} priority={index < ABOVE_THE_FOLD_COUNT} />
-        <p className="u-align u-gap8">
+        <p className="u-align vertical start">
           {formatDate(deal.publishedAt) && (
-            <time className={styles.time}>{formatDate(deal.publishedAt)}</time>
+            <time className='c-txt__sm'>{formatDate(deal.publishedAt)}</time>
           )}
-          <span className="c-heading--sm">{deal.title}</span>
+          <span className="c-heading--md">{deal.title}</span>
         </p>
       </Link>
     ),
@@ -31,7 +31,7 @@ const columns: Column<Deal>[] = [
     header: '顧客名',
     cell: (deal) =>
       deal.customer ? (
-        <Link href={`/customers/${deal.customer.id}`}>{deal.customer.name}</Link>
+        <Link href={`/customers/${deal.customer.id}`} className="c-heading--sm">{deal.customer.name}</Link>
       ) : (
         <span>{EMPTY_LABEL}</span>
       ),
@@ -70,9 +70,9 @@ const columns: Column<Deal>[] = [
       const sales = formatPrice(deal.sales);
       return (
         <>
-          <span>{estimated ? <strong>{estimated} 円</strong> : EMPTY_LABEL}</span>
+          <span>{estimated ? <strong>{estimated}</strong> : EMPTY_LABEL}<small> 円</small></span>
           <br />
-          <span>{sales ? <strong>{sales} 円</strong> : EMPTY_LABEL}</span>
+          <span>{sales ? <strong>{sales}</strong> : EMPTY_LABEL}<small> 円</small></span>
         </>
       );
     },

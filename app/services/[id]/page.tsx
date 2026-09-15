@@ -50,6 +50,7 @@ export default async function ServiceDetailPage({
           <Link href="/services" className="c-btn__line sm u-mb16">
             一覧へ戻る
           </Link>
+          <h2 className={styles.title}>{service['service-name']}</h2>
           <Image
             src={thumbnail?.url ?? '/img/common/no-image.webp'}
             width={thumbnail?.width ?? 320}
@@ -62,12 +63,11 @@ export default async function ServiceDetailPage({
           />
           <dl>
             <dt className="u-mb4">価格</dt>
-            <dd className="u-mb16">{price ? <strong>{price} 円</strong> : <span>{EMPTY_LABEL}</span>}</dd>
+            <dd className="u-mb16">{price ? <strong className='c-heading--lg'>{price}</strong> : <span>{EMPTY_LABEL}</span>} <small> 円</small></dd>
           </dl>
         </aside>
 
         <div className="u-align vertical start u-gap24">
-          <h2 className={styles.title}>{service['service-name']}</h2>
 
           <RelatedSection
             title="このサービスの商談・案件"

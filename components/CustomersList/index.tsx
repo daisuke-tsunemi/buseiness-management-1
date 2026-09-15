@@ -31,13 +31,13 @@ const columns: Column<Customer>[] = [
   {
     header: '電話番号',
     cell: (customer) =>
-      customer.tel ? <a href={`tel:${customer.tel}`}>{customer.tel}</a> : <span>{EMPTY_LABEL}</span>,
+      customer.tel ? <span>{customer.tel}</span> : <span>{EMPTY_LABEL}</span>,
   },
   {
     header: 'メールアドレス',
     cell: (customer) =>
       customer.mail ? (
-        <a href={`mailto:${customer.mail}`}>{customer.mail}</a>
+        <span>{customer.mail}</span>
       ) : (
         <span>{EMPTY_LABEL}</span>
       ),

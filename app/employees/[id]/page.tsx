@@ -56,17 +56,17 @@ export default async function EmployeeDetailPage({
             unoptimized // 一時的に追加
             className={styles.thumbnail}
           />
-        </aside>
-
-        <div className="u-align vertical start u-gap24">
           <h2 className={styles.title}>{employee.name}</h2>
 
           {employee.profile && (
             <div className={styles.content}>
-              <h3 className="u-mb16">プロフィール</h3>
+              <h3 className="c-heading--lg u-mb16">プロフィール</h3>
               <div dangerouslySetInnerHTML={{ __html: employee.profile }} />
             </div>
           )}
+        </aside>
+
+        <div className="u-align vertical start u-gap24">
 
           <RelatedSection
             title="担当している商談・案件"
