@@ -66,6 +66,7 @@ export type Deal = MicroCMSBase & {
 export type Activity = MicroCMSBase & {
   deals?: Deal;
   activatedAt?: string;
+  'activity-title'?: string;
   'activity-content'?: string;
   'activity-next'?: string;
 };

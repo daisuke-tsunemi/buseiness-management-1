@@ -10,9 +10,12 @@
   padding:.125rem .5rem;
   background-color: var(--bg-dark);
   border-radius: .5rem;
-}
-.title {
-  margin-bottom: 1rem;
+  color: black;
+  @include respond-lg{
+    &:hover{
+      opacity: .7;
+    }
+  }
 }
 .description {
   color: var(--text-light);

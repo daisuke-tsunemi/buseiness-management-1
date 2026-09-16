@@ -8,9 +8,9 @@ import styles from './GlobalNav.module.scss';
 const NAV_ITEMS = [
   { href: '/', icon: 'dashboard', label: 'ダッシュボード' },
   { href: '/deals', icon: 'check_circle', label: '商談・案件管理' },
-  { href: '/activities', icon: 'lightning', label: '活動履歴' },
+  { href: '/activities', icon: 'play', label: '活動履歴' },
   { href: '/customers', icon: 'order', label: '顧客管理' },
-  { href: '/services', icon: 'download', label: '商材・サービス' },
+  { href: '/services', icon: 'lightning', label: '商材・サービス' },
   { href: '/employees', icon: 'user', label: '自社担当者' },
 ] as const;
 

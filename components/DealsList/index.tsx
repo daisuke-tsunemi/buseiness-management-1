@@ -33,14 +33,14 @@ const columns: Column<Deal>[] = [
       deal.customer ? (
         <Link href={`/customers/${deal.customer.id}`} className="c-heading--sm">{deal.customer.name}</Link>
       ) : (
-        <span>{EMPTY_LABEL}</span>
+        <span className='color__70 c-heading--sm'>{EMPTY_LABEL}</span>
       ),
   },
   {
     header: 'ステータス',
     cell: (deal) => {
       const status = formatSelect(deal.status);
-      return status ? <strong>{status}</strong> : <span>{EMPTY_LABEL}</span>;
+      return status ? <strong>{status}</strong> : <span className='color__70 c-heading--sm'>{EMPTY_LABEL}</span>;
     },
   },
   {
@@ -59,7 +59,7 @@ const columns: Column<Deal>[] = [
           ))}
         </div>
       ) : (
-        <span>{EMPTY_LABEL}</span>
+        <span className='color__70 c-heading--sm'>{EMPTY_LABEL}</span>
       ),
   },
   {
@@ -70,9 +70,8 @@ const columns: Column<Deal>[] = [
       const sales = formatPrice(deal.sales);
       return (
         <>
-          <span>{estimated ? <strong>{estimated}</strong> : EMPTY_LABEL}<small> 円</small></span>
-          <br />
-          <span>{sales ? <strong>{sales}</strong> : EMPTY_LABEL}<small> 円</small></span>
+          <p>{estimated ? <strong>{estimated}</strong> : <span className='color__70 c-heading--sm'>{EMPTY_LABEL}</span>}<small> 円</small></p>
+          <p>{sales ? <strong>{sales}</strong> : <span className='color__70 c-heading--sm'>{EMPTY_LABEL}</span>}<small> 円</small></p>
         </>
       );
     },

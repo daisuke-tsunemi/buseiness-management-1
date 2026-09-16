@@ -35,7 +35,7 @@ export default async function DealDetailPage({
       page: currentPage,
       filters: `deals[equals]${id}`,
       orders: '-activatedAt',
-      fields: 'id,activatedAt,activity-content,activity-next',
+      fields: 'id,activatedAt,activity-title,activity-content,activity-next',
     }),
   );
 
@@ -65,7 +65,7 @@ export default async function DealDetailPage({
           />
           <dl>
             <dt className="u-mb4">ステータス</dt>
-            <dd className="u-mb16">{status ? <strong>{status}</strong> : <span>{EMPTY_LABEL}</span>}</dd>
+            <dd className="u-mb16">{status ? <strong>{status}</strong> : <span className='color__70 c-heading--sm'>{EMPTY_LABEL}</span>}</dd>
 
             <dt className="u-mb4">顧客名</dt>
             <dd className="u-mb16">
@@ -74,7 +74,7 @@ export default async function DealDetailPage({
                   <strong>{deal.customer.name}</strong>
                 </Link>
               ) : (
-                <span>{EMPTY_LABEL}</span>
+                <span className='color__70 c-heading--sm'>{EMPTY_LABEL}</span>
               )}
             </dd>
 
@@ -86,15 +86,15 @@ export default async function DealDetailPage({
                   {servicePrice && <span>（{servicePrice} 円）</span>}
                 </Link>
               ) : (
-                <span>{EMPTY_LABEL}</span>
+                <span className='color__70 c-heading--sm'>{EMPTY_LABEL}</span>
               )}
             </dd>
 
             <dt className="u-mb4">見込み金額</dt>
-            <dd className="u-mb16">{estimated ? <strong>{estimated} 円</strong> : <span>{EMPTY_LABEL}</span>}</dd>
+            <dd className="u-mb16">{estimated ? <strong>{estimated} 円</strong> : <span className='color__70 c-heading--sm'>{EMPTY_LABEL}</span>}</dd>
 
             <dt className="u-mb4">売上金額</dt>
-            <dd className="u-mb16">{sales ? <strong>{sales} 円</strong> : <span>{EMPTY_LABEL}</span>}</dd>
+            <dd className="u-mb16">{sales ? <strong>{sales} 円</strong> : <span className='color__70 c-heading--sm'>{EMPTY_LABEL}</span>}</dd>
 
             <dt className="u-mb4">自社担当者</dt>
             <dd className="u-mb16">
@@ -111,7 +111,7 @@ export default async function DealDetailPage({
                   ))}
                 </div>
               ) : (
-                <span>{EMPTY_LABEL}</span>
+                <span className='color__70 c-heading--sm'>{EMPTY_LABEL}</span>
               )}
             </dd>
           </dl>

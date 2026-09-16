@@ -34,21 +34,20 @@ export default async function ActivityDetailPage({
                   <strong>{activity.deals.title}</strong>
                 </Link>
               ) : (
-                <span>{EMPTY_LABEL}</span>
+                <span className='color__70 c-heading--sm'>{EMPTY_LABEL}</span>
               )}
             </dd>
 
             <dt className="u-mb4">案件ステータス</dt>
             <dd className="u-mb16">
-              {dealStatus ? <strong>{dealStatus}</strong> : <span>{EMPTY_LABEL}</span>}
+              {dealStatus ? <strong>{dealStatus}</strong> : <span className='color__70 c-heading--sm'>{EMPTY_LABEL}</span>}
             </dd>
           </dl>
         </aside>
 
         <div className="u-align vertical start u-gap24">
-          <div>
-            <h2 className={styles.title}>{activatedAt ?? EMPTY_LABEL}</h2>
-            {activity.deals && <p className="c-txt__sm">{activity.deals.title}</p>}
+          <div>{activatedAt ?? EMPTY_LABEL}
+            <h2 className={styles.title}>{activity['activity-title']}</h2>
           </div>
 
           <section className={styles.content}>

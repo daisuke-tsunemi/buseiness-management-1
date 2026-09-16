@@ -7,11 +7,11 @@ export default function Sidebar() {
     <aside className={styles.sidebar}>
       <div className={styles.sidebar__inner}>
         <Image
-          src="/img/common/logo/logo_simple.svg"
+          src="/img/common/logo/logo_simple.webp"
           alt="ロゴ"
           className={styles.sidebar__logo}
-          width={58}
-          height={18}
+          width={100}
+          height={43}
           priority
         />
         <GlobalNav />

@@ -11,27 +11,33 @@ const columns: Column<Activity>[] = [
   {
     header: '活動日時',
     cell: (activity) => (
-      <p className='c-txt__sm'>
+      <p className='c-txt__xs'>
         {formatDateTime(activity.activatedAt) ?? EMPTY_LABEL}
       </p>
     ),
   },
   {
-    header: '案件名',
+    header: '活動タイトル',
     cell: (activity) =>
       activity.deals ? (
-        <Link href={`/deals/${activity.deals.id}`} className="c-heading--sm">{activity.deals.title}</Link>
+        <Link href={`/activities/${activity.id}`} className="c-heading--sm">{activity['activity-title']}</Link>
       ) : (
-        <span>{EMPTY_LABEL}</span>
+        <span className='color__70 c-heading--sm'>{EMPTY_LABEL}</span>
       ),
   },
   {
-    header: '活動内容',
-    cell: (activity) => <p>{activity['activity-content'] ?? EMPTY_LABEL}</p>,
+    header: '案件名',
+    cell: (activity) =>
+      activity.deals ? (
+        <p className="c-heading--sm">{activity.deals.title}</p>
+      ) : (
+        <span className='color__70 c-heading--sm'>{EMPTY_LABEL}</span>
+      ),
   },
   {
-    header: '次回予定',
-    cell: (activity) => <p>{activity['activity-next'] ?? EMPTY_LABEL}</p>,
+    header: '活動内容/次回予定',
+    cell: (activity) => <div><p className='c-txt__sm'>{activity['activity-content'] ?? EMPTY_LABEL}</p>
+    <p className='c-txt__sm'>{activity['activity-next'] ?? EMPTY_LABEL}</p></div>,
   },
 ];
 

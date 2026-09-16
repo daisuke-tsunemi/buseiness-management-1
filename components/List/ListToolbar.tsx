@@ -15,7 +15,7 @@ export default function ListToolbar({ totalCount, placeholder, children }: Props
         {children}
       </div>
       <p className="c-txt__sm">
-        全 <strong>{totalCount.toLocaleString('ja-JP')}</strong> 件
+        全 <strong className='c-heading--xl'>{totalCount.toLocaleString('ja-JP')}</strong> 件
       </p>
     </div>
   );

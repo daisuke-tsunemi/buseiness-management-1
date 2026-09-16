@@ -12,12 +12,12 @@ export const SURFACE = '#f1f4f7';
 
 /** カテゴリカル（系列の識別） */
 export const SERIES = {
-  sales: '#2a78d6',
-  estimated: '#eb6834',
+  sales: '#00a849',
+  estimated: '#ea5115',
 } as const;
 
 /** 序数ランプ（パイプライン段階の順序を明度で表す） */
-export const ORDINAL_RAMP = ['#6da7ec', '#3987e5', '#256abf', '#184f95', '#0d366b'] as const;
+export const ORDINAL_RAMP = ['#5f9de9', '#2178e3', '#1c6cce', '#0d4793', '#002c65'] as const;
 
 /** パイプライン外のステータス */
 export const NEUTRAL = '#898781';

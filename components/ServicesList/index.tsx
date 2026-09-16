@@ -15,12 +15,12 @@ const columns: Column<Service>[] = [
   {
     header: 'サービス名',
     cell: (service, index) => (
-      <Link href={`/services/${service.id}`} className="u-align u-gap4">
+      <Link href={`/services/${service.id}`} className="u-align u-gap8">
         <Thumbnail
           image={service['service-thumbnail']}
           priority={index < ABOVE_THE_FOLD_COUNT}
         />
-        <span className="c-heading--sm">{service['service-name']}</span>
+        <span className="c-heading--md">{service['service-name']}</span>
       </Link>
     ),
   },
@@ -29,7 +29,7 @@ const columns: Column<Service>[] = [
     align: 'right',
     cell: (service) => {
       const price = formatPrice(service['service-price']);
-      return price ? <strong>{price} 円</strong> : <span>{EMPTY_LABEL}</span>;
+      return price ? <><strong className='c-heading--lg'>{price}</strong><small> 円</small></> : <span className='color__70 c-heading--sm'>{EMPTY_LABEL}</span>;
     },
   },
 ];

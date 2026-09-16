@@ -23,7 +23,7 @@ export default async function Activities({
     buildListQueries({
       page: currentPage,
       q,
-      fields: 'id,activatedAt,activity-content,activity-next,deals.id,deals.title',
+      fields: 'id,activatedAt,activity-title,activity-content,activity-next,deals.id,deals.title',
       orders: '-activatedAt',
     }),
   );

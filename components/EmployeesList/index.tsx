@@ -22,15 +22,15 @@ const columns: Column<Employee>[] = [
   {
     header: '担当者名',
     cell: (employee, index) => (
-      <Link href={`/employees/${employee.id}`} className="u-align u-gap4">
+      <Link href={`/employees/${employee.id}`} className="u-align u-gap8">
         <Thumbnail image={employee.thumbnail} priority={index < ABOVE_THE_FOLD_COUNT} />
-        <span className="c-heading--sm">{employee.name}</span>
+        <span className="c-heading--md">{employee.name}</span>
       </Link>
     ),
   },
   {
     header: 'プロフィール',
-    cell: (employee) => <p>{toExcerpt(employee.profile) ?? '—'}</p>,
+    cell: (employee) => <p className='c-txt__sm'>{toExcerpt(employee.profile) ?? '—'}</p>,
   },
 ];
 

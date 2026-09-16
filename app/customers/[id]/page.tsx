@@ -51,20 +51,20 @@ export default async function CustomerDetailPage({
           <dl>
             <dt className="u-mb4">担当者名</dt>
             <dd className="u-mb16">
-              {customer.person ? <strong>{customer.person}</strong> : <span>{EMPTY_LABEL}</span>}
+              {customer.person ? <strong>{customer.person}</strong> : <span className='color__70 c-heading--sm'>{EMPTY_LABEL}</span>}
             </dd>
 
             <dt className="u-mb4">優先度</dt>
             <dd className="u-mb16">
-              {priority ? <span className={styles.tag}>{priority}</span> : <span>{EMPTY_LABEL}</span>}
+              {priority ? <span className={styles.tag}>{priority}</span> : <span className='color__70 c-heading--sm'>{EMPTY_LABEL}</span>}
             </dd>
 
             <dt className="u-mb4">住所</dt>
-            <dd className="u-mb16">{customer.address ?? <span>{EMPTY_LABEL}</span>}</dd>
+            <dd className="u-mb16">{customer.address ?? <span className='color__70 c-heading--sm'>{EMPTY_LABEL}</span>}</dd>
 
             <dt className="u-mb4">電話番号</dt>
             <dd className="u-mb16">
-              {customer.tel ? <a href={`tel:${customer.tel}`}>{customer.tel}</a> : <span>{EMPTY_LABEL}</span>}
+              {customer.tel ? <a href={`tel:${customer.tel}`}>{customer.tel}</a> : <span className='color__70 c-heading--sm'>{EMPTY_LABEL}</span>}
             </dd>
 
             <dt className="u-mb4">メールアドレス</dt>
@@ -72,7 +72,7 @@ export default async function CustomerDetailPage({
               {customer.mail ? (
                 <a href={`mailto:${customer.mail}`}>{customer.mail}</a>
               ) : (
-                <span>{EMPTY_LABEL}</span>
+                <span className='color__70 c-heading--sm'>{EMPTY_LABEL}</span>
               )}
             </dd>
           </dl>

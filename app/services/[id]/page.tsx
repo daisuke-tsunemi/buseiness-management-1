@@ -56,14 +56,14 @@ export default async function ServiceDetailPage({
             width={thumbnail?.width ?? 320}
             height={thumbnail?.height ?? 240}
             sizes="(min-width: 1024px) 20rem, 100vw"
-            alt=""
+            alt='サムネイル'
             priority
             unoptimized // 一時的に追加
             className={styles.thumbnail}
           />
           <dl>
             <dt className="u-mb4">価格</dt>
-            <dd className="u-mb16">{price ? <strong className='c-heading--lg'>{price}</strong> : <span>{EMPTY_LABEL}</span>} <small> 円</small></dd>
+            <dd className="u-mb16">{price ? <strong className='c-heading--lg'>{price}</strong> : <span className='color__70 c-heading--sm'>{EMPTY_LABEL}</span>} <small> 円</small></dd>
           </dl>
         </aside>
 

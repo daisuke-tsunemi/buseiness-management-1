@@ -30,37 +30,98 @@ microCMS をデータベースとして使う、**社内向けの商談・案件
 
 ## セットアップ
 
-### 1. microCMS 側
+### 前提条件
 
-テンプレートから生成すると、以下の API が作成されます。
+- **Node.js 18.17 以上** / **npm 9 以上**
+- **microCMS アカウント**（無料プランで利用可能）
+- **GitHub アカウント**（Vercel へのデプロイ時に必要）
+
+### 1. microCMS 側の準備
+
+#### 1-1. microCMS でテンプレートから API を生成
+
+1. [microCMS](https://microcms.io) にログインして、ダッシュボードにアクセス
+2. 新規ワークスペース / プロジェクトを作成
+3. **「テンプレート」タブから本テンプレート（商談管理）を選択**して生成
+4. 以下の API が自動生成されます：
 
 | API ID | 種類 | 主なフィールド |
 | --- | --- | --- |
 | `deals` | リスト | title, eyecatch, content, customer（参照）, service（参照）, employee（複数参照）, status（セレクト）, estimated（数値）, sales（数値） |
-| `activities` | リスト | deals（参照）, activatedAt（日時）, activity-content, activity-next |
+| `activities` | リスト | activity-title, deals（参照）, activatedAt（日時）, activity-content, activity-next |
 | `customers` | リスト | name, person, priority（セレクト）, address, tel, mail, note |
 | `services` | リスト | service-name, service-price, service-thumbnail |
 | `employees` | リスト | name, thumbnail, profile |
 
-### 2. 環境変数
+#### 1-2. API キーを取得
 
-`.env`（ローカル）または Vercel の環境変数に設定します。
+1. microCMS の**設定 → API キー**を開く
+2. **本番用 API キー** をコピーして保管
+
+### 2. ローカル環境の構築
+
+#### 2-1. リポジトリをクローン
+
+```bash
+git clone https://github.com/your-username/cms-on-vercel.git
+cd cms-on-vercel
+npm install
+```
+
+#### 2-2. 環境変数を設定
+
+リポジトリのルートに `.env.local` ファイルを作成します：
 
 ```bash
 MICROCMS_SERVICE_DOMAIN=xxxxx   # https://xxxxx.microcms.io の xxxxx
-MICROCMS_API_KEY=xxxxxxxxxx     # microCMS の API キー
-BASE_URL=https://example.com    # OGP などの絶対 URL 生成に使用（任意）
+MICROCMS_API_KEY=xxxxxxxxxx     # microCMS の API キー（1-2 で取得）
+BASE_URL=http://localhost:3000  # ローカル開発時は localhost でも可
 ```
 
-### 3. 起動
+> **API キーの扱い**：`.env.local` は Git でコミットしないようにしてください（`.gitignore` に含まれています）
+
+#### 2-3. ローカルで起動して動作確認
 
 ```bash
-npm install
-npm run dev     # http://localhost:3000
+npm run dev
 ```
 
+ブラウザで [http://localhost:3000](http://localhost:3000) を開き、以下が表示されることを確認：
+- **ダッシュボード**：KPI グラフ（データが無い場合は 0 表示）
+- **ナビゲーション**：サイドメニューが表示
+- **API 連携**：microCMS からデータが正常に取得できる
+
+> microCMS にまだデータがない場合、一覧は空の状態で表示されます。[microCMS の管理画面](https://app.microcms.io)からテストデータを追加してください。
+
+### 3. 本番環境への デプロイ（Vercel）
+
+#### 3-1. GitHub にプッシュ
+
 ```bash
-npm run build && npm run start   # 本番ビルド
+git add .
+git commit -m "Initial commit"
+git push origin main
+```
+
+#### 3-2. Vercel にデプロイ
+
+1. [Vercel](https://vercel.com) でサインアップ / ログイン
+2. **「新規プロジェクト」→ GitHub リポジトリをインポート**
+3. **環境変数を設定**：
+   - `MICROCMS_SERVICE_DOMAIN`
+   - `MICROCMS_API_KEY`
+   - `BASE_URL=https://your-domain.vercel.app`（またはカスタムドメイン）
+4. **デプロイ** をクリック
+
+#### 3-3. 本番環境で動作確認
+
+デプロイ完了後、Vercel が提供するプレビュー URL にアクセスして動作確認
+
+### 4. 本番ビルド（ローカルで実行する場合）
+
+```bash
+npm run build
+npm run start
 ```
 
 ## カスタマイズの入口

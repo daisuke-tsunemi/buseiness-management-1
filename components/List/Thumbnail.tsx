@@ -14,7 +14,7 @@ export default function Thumbnail({ image, priority = false }: Props) {
       <Image
         className={styles.img}
         src="/img/common/no-image.webp"
-        alt=""
+        alt="no-image"
         width={80}
         height={60}
         priority={priority}
@@ -30,7 +30,7 @@ export default function Thumbnail({ image, priority = false }: Props) {
       />
       <img
         src={image.url}
-        alt=""
+        alt="サムネイル"
         className={styles.img}
         width={image.width}
         height={image.height}

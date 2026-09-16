@@ -13,7 +13,7 @@ type Props = {
 export default function RelatedSection({ title, totalCount, currentPage, children }: Props) {
   return (
     <section className={styles.content}>
-      <div className="u-align wrap between u-gap8 u-mb16">
+      <div className="u-align wrap between u-gap8">
         <h3>{title}</h3>
         <p className="c-txt__sm">
           全 <strong>{totalCount.toLocaleString('ja-JP')}</strong> 件

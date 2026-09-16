@@ -12,26 +12,26 @@ const columns: Column<Customer>[] = [
   {
     header: '顧客名',
     cell: (customer) => (
-      <Link href={`/customers/${customer.id}`} className="c-heading--sm">
+      <Link href={`/customers/${customer.id}`} className="c-heading--md">
         {customer.name}
       </Link>
     ),
   },
   {
     header: '担当者名',
-    cell: (customer) => customer.person ?? <span>{EMPTY_LABEL}</span>,
+    cell: (customer) => customer.person ?? <span className='color__70 c-heading--sm'>{EMPTY_LABEL}</span>,
   },
   {
     header: '優先度',
     cell: (customer) => {
       const priority = formatSelect(customer.priority);
-      return priority ? <span className={styles.tag}>{priority}</span> : <span>{EMPTY_LABEL}</span>;
+      return priority ? <span className={styles.tag}>{priority}</span> : <span className='color__70 c-heading--sm'>{EMPTY_LABEL}</span>;
     },
   },
   {
     header: '電話番号',
     cell: (customer) =>
-      customer.tel ? <span>{customer.tel}</span> : <span>{EMPTY_LABEL}</span>,
+      customer.tel ? <span>{customer.tel}</span> : <span className='color__70 c-heading--sm'>{EMPTY_LABEL}</span>,
   },
   {
     header: 'メールアドレス',
@@ -39,7 +39,7 @@ const columns: Column<Customer>[] = [
       customer.mail ? (
         <span>{customer.mail}</span>
       ) : (
-        <span>{EMPTY_LABEL}</span>
+        <span className='color__70 c-heading--sm'>{EMPTY_LABEL}</span>
       ),
   },
 ];

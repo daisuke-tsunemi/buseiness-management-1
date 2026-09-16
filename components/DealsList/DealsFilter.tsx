@@ -25,30 +25,19 @@ export default function DealsFilter({ employees }: Props) {
   };
 
   return (
-    <fieldset className={`${styles.search__radio} u-align wrap u-gap4`}>
-      <label className="u-align u-gap4">
-        <input
-          type="radio"
-          name="employee"
-          value=""
-          checked={employeeId === ''}
-          onChange={(e) => handleChange(e.target.value)}
-        />
-        <span>すべての担当者</span>
-      </label>
-
+    <select
+      className={styles.search__select}
+      name="employee"
+      aria-label="担当者で絞り込む"
+      value={employeeId}
+      onChange={(e) => handleChange(e.target.value)}
+    >
+      <option value="">すべての担当者</option>
       {employees.map((employee) => (
-        <label key={employee.id} className="u-align u-gap4">
-          <input
-            type="radio"
-            name="employee"
-            value={employee.id}
-            checked={employeeId === employee.id}
-            onChange={(e) => handleChange(e.target.value)}
-          />
-          <span>{employee.name}</span>
-        </label>
+        <option key={employee.id} value={employee.id}>
+          {employee.name}
+        </option>
       ))}
-    </fieldset>
+    </select>
   );
 }
