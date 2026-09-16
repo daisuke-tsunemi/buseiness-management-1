@@ -136,9 +136,10 @@ export default async function DealDetailPage({
               <dl>
                 {activities.map((activity) => (
                   <div key={activity.id} className="u-mb24">
+                    <span>{formatDateTime(activity.activatedAt) ?? EMPTY_LABEL}</span>
                     <dt className="u-mb4">
                       <Link href={`/activities/${activity.id}`}>
-                        <strong>{formatDateTime(activity.activatedAt) ?? EMPTY_LABEL}</strong>
+                        <strong className='c-heading--md'>{activity['activity-title'] ?? EMPTY_LABEL}</strong>
                       </Link>
                     </dt>
                     <dd>
