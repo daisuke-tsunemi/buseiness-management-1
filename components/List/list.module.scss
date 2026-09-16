@@ -24,10 +24,10 @@
 }
 .img{
   display:block;
-  height: auto;
-  width: 5rem;
+  height: 3rem;
+  width: 4rem;
   object-fit: cover;
-  max-height: 4rem;
+  border-radius: .25rem;
 }
 .time{
   color: #ccc;

@@ -16,7 +16,7 @@ export default function RelatedSection({ title, totalCount, currentPage, childre
       <div className="u-align wrap between u-gap8">
         <h3>{title}</h3>
         <p className="c-txt__sm">
-          全 <strong>{totalCount.toLocaleString('ja-JP')}</strong> 件
+          全 <strong className='c-heading--xl'>{totalCount.toLocaleString('ja-JP')}</strong> 件
         </p>
       </div>
       {children}

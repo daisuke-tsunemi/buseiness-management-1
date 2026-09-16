@@ -47,7 +47,7 @@ export default async function DealDetailPage({
 
   return (
     <>
-      <Header title="商談・案件" />
+      <Header title="商談・案件詳細" />
       <div className={styles.wrapper}>
         <aside>
           <Link href="/deals" className="c-btn__line sm u-mb16">
@@ -64,13 +64,13 @@ export default async function DealDetailPage({
             className={styles.thumbnail}
           />
           <dl>
-            <dt className="u-mb4">ステータス</dt>
+            <dt className="u-mb4 c-heading--sm color__70">ステータス</dt>
             <dd className="u-mb16">{status ? <strong>{status}</strong> : <span className='color__70 c-heading--sm'>{EMPTY_LABEL}</span>}</dd>
 
-            <dt className="u-mb4">顧客名</dt>
+            <dt className="u-mb4 c-heading--sm color__70">顧客名</dt>
             <dd className="u-mb16">
               {deal.customer ? (
-                <Link href={`/customers/${deal.customer.id}`}>
+                <Link href={`/customers/${deal.customer.id}`} className='c-btn--white sm'>
                   <strong>{deal.customer.name}</strong>
                 </Link>
               ) : (
@@ -78,10 +78,10 @@ export default async function DealDetailPage({
               )}
             </dd>
 
-            <dt className="u-mb4">商材・サービス</dt>
+            <dt className="u-mb4 c-heading--sm color__70">商材・サービス</dt>
             <dd className="u-mb16">
               {deal.service ? (
-                <Link href={`/services/${deal.service.id}`}>
+                <Link href={`/services/${deal.service.id}`} className='c-btn--white sm'>
                   <strong>{deal.service['service-name']}</strong>
                   {servicePrice && <span>（{servicePrice} 円）</span>}
                 </Link>
@@ -90,13 +90,13 @@ export default async function DealDetailPage({
               )}
             </dd>
 
-            <dt className="u-mb4">見込み金額</dt>
-            <dd className="u-mb16">{estimated ? <strong>{estimated} 円</strong> : <span className='color__70 c-heading--sm'>{EMPTY_LABEL}</span>}</dd>
+            <dt className="u-mb4 c-heading--sm color__70">見込み金額</dt>
+            <dd className="u-mb16">{estimated ? <><strong className='c-heading--xl'>{estimated}</strong><small> 円</small></> : <span className='color__70 c-heading--sm'>{EMPTY_LABEL}</span>}</dd>
 
-            <dt className="u-mb4">売上金額</dt>
-            <dd className="u-mb16">{sales ? <strong>{sales} 円</strong> : <span className='color__70 c-heading--sm'>{EMPTY_LABEL}</span>}</dd>
+            <dt className="u-mb4 c-heading--sm color__70">売上金額</dt>
+            <dd className="u-mb16">{sales ? <><strong className='c-heading--xl'>{sales}</strong><small> 円</small></> : <span className='color__70 c-heading--sm'>{EMPTY_LABEL}</span>}</dd>
 
-            <dt className="u-mb4">自社担当者</dt>
+            <dt className="u-mb4 c-heading--sm color__70">自社担当者</dt>
             <dd className="u-mb16">
               {deal.employee && deal.employee.length > 0 ? (
                 <div className="u-align wrap u-gap4">
@@ -135,10 +135,10 @@ export default async function DealDetailPage({
             ) : (
               <dl>
                 {activities.map((activity) => (
-                  <div key={activity.id} className="u-mb24">
-                    <span>{formatDateTime(activity.activatedAt) ?? EMPTY_LABEL}</span>
-                    <dt className="u-mb4">
+                  <div key={activity.id} className={`${styles.list} u-mb16`}>
+                    <dt className="u-mb4 c-heading--sm">
                       <Link href={`/activities/${activity.id}`}>
+                        <span>{formatDateTime(activity.activatedAt) ?? EMPTY_LABEL}</span><br />
                         <strong className='c-heading--md'>{activity['activity-title'] ?? EMPTY_LABEL}</strong>
                       </Link>
                     </dt>

@@ -44,7 +44,7 @@ export default async function ServiceDetailPage({
 
   return (
     <>
-      <Header title="商材・サービス" />
+      <Header title="商材・サービス詳細" />
       <div className={styles.wrapper}>
         <aside>
           <Link href="/services" className="c-btn__line sm u-mb16">
@@ -61,10 +61,10 @@ export default async function ServiceDetailPage({
             unoptimized // 一時的に追加
             className={styles.thumbnail}
           />
-          <dl>
-            <dt className="u-mb4">価格</dt>
-            <dd className="u-mb16">{price ? <strong className='c-heading--lg'>{price}</strong> : <span className='color__70 c-heading--sm'>{EMPTY_LABEL}</span>} <small> 円</small></dd>
-          </dl>
+          <div className={`${styles.content} u-align u-gap16`}>
+            <dt >価格</dt>
+            <dd className="u-mlAuto">{price ? <strong className='c-heading--lg'>{price}</strong> : <span className='color__70 c-heading--sm'>{EMPTY_LABEL}</span>} <small> 円</small></dd>
+          </div>
         </aside>
 
         <div className="u-align vertical start u-gap24">

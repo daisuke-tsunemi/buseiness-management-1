@@ -1,9 +1,12 @@
 @use "@/styles/foundation/variables" as *;
 .wrapper {
   display: grid;
-  gap: 3vh 3vw;
+  gap: 3vh 2vw;
   @include respond-lg{
     grid-template-columns: 17.5rem 1fr;
+  }
+  >*{
+    min-width: 1px;
   }
 }
 .tag{
@@ -24,7 +27,11 @@
     text-align: center;
   }
 }
-
+.list{
+  dd{
+  border-bottom: 1px dotted #888;
+  }
+}
 .meta {
   display: flex;
   align-items: center;
@@ -127,8 +134,10 @@
   }
   a {
     @include respond-lg{
-      text-decoration: underline;
-      color: var(--primary);
+      &:hover{
+        text-decoration: underline;
+        color: var(--primary);
+      }
     }
   }
   figure {
@@ -152,7 +161,7 @@
     margin: 2rem 0;
   }
   hr {
-    margin: 5vh 0;
+    margin: 3vh 0;
     height: 1px;
     background-color: var(--border);
     border: none;
@@ -161,7 +170,6 @@
     width: 100%;
     margin: 2rem 0;
     th {
-      background-color: var(--bg-sub);
       text-align: left;
     }
     td {

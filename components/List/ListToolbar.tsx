@@ -9,7 +9,7 @@ type Props = {
 
 export default function ListToolbar({ totalCount, placeholder, children }: Props) {
   return (
-    <div className="u-align wrap bottom between u-gap8 u-mb32">
+    <div className="u-align wrap bottom between u-gap8 u-mb24">
       <div className="u-align wrap bottom u-gap8">
         <SearchBox placeholder={placeholder} />
         {children}

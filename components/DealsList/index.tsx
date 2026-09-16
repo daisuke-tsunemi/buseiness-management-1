@@ -70,8 +70,8 @@ const columns: Column<Deal>[] = [
       const sales = formatPrice(deal.sales);
       return (
         <>
-          <p>{estimated ? <strong>{estimated}</strong> : <span className='color__70 c-heading--sm'>{EMPTY_LABEL}</span>}<small> 円</small></p>
-          <p>{sales ? <strong>{sales}</strong> : <span className='color__70 c-heading--sm'>{EMPTY_LABEL}</span>}<small> 円</small></p>
+          <p className='u-right'>{estimated ? <strong>{estimated}</strong> : <span className='color__70 c-heading--sm'>{EMPTY_LABEL}</span>}<small> 円</small></p>
+          <p className='u-right'>{sales ? <strong>{sales}</strong> : <span className='color__70 c-heading--sm'>{EMPTY_LABEL}</span>}<small> 円</small></p>
         </>
       );
     },

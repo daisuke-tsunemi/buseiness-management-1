@@ -9,14 +9,14 @@
     min-height: 100vh;
   }
   >*{
-    min-height: 1px;
+    min-width: 1px;
   }
   &Content{
     flex: auto;
   }
 }
 .main {
-  padding: 2vh 3vw;
+  padding: 2vh 2vw;
   width: 100%;
   scroll-behavior: smooth;
   position:relative;
@@ -28,7 +28,7 @@
 }
 .loading{
   height: 100dvh;
-  width: 100vw;
+  width: 90vw;
   display: flex;
   align-items: center;
   justify-content: center;

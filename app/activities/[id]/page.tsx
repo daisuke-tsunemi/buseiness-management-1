@@ -20,17 +20,17 @@ export default async function ActivityDetailPage({
 
   return (
     <>
-      <Header title="活動履歴" />
+      <Header title="活動履歴詳細" />
       <div className={styles.wrapper}>
         <aside>
           <Link href="/activities" className="c-btn__line sm u-mb16">
             一覧へ戻る
           </Link>
           <dl>
-            <dt className="u-mb4">案件名</dt>
+            <dt className="u-mb4 c-heading--sm color__70">案件名</dt>
             <dd className="u-mb16">
               {activity.deals ? (
-                <Link href={`/deals/${activity.deals.id}`}>
+                <Link href={`/deals/${activity.deals.id}`} className='c-btn--white sm'>
                   <strong>{activity.deals.title}</strong>
                 </Link>
               ) : (
@@ -38,7 +38,7 @@ export default async function ActivityDetailPage({
               )}
             </dd>
 
-            <dt className="u-mb4">案件ステータス</dt>
+            <dt className="u-mb4 c-heading--sm color__70">案件ステータス</dt>
             <dd className="u-mb16">
               {dealStatus ? <strong>{dealStatus}</strong> : <span className='color__70 c-heading--sm'>{EMPTY_LABEL}</span>}
             </dd>

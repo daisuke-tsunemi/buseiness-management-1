@@ -42,35 +42,35 @@ export default async function CustomerDetailPage({
 
   return (
     <>
-      <Header title="顧客" />
+      <Header title="顧客詳細" />
       <div className={styles.wrapper}>
         <aside>
           <Link href="/customers" className="c-btn__line sm u-mb16">
             一覧へ戻る
           </Link>
           <dl>
-            <dt className="u-mb4">担当者名</dt>
+            <dt className="u-mb4 c-heading--sm color__70">担当者名</dt>
             <dd className="u-mb16">
               {customer.person ? <strong>{customer.person}</strong> : <span className='color__70 c-heading--sm'>{EMPTY_LABEL}</span>}
             </dd>
 
-            <dt className="u-mb4">優先度</dt>
+            <dt className="u-mb4 c-heading--sm color__70">優先度</dt>
             <dd className="u-mb16">
               {priority ? <span className={styles.tag}>{priority}</span> : <span className='color__70 c-heading--sm'>{EMPTY_LABEL}</span>}
             </dd>
 
-            <dt className="u-mb4">住所</dt>
+            <dt className="u-mb4 c-heading--sm color__70">住所</dt>
             <dd className="u-mb16">{customer.address ?? <span className='color__70 c-heading--sm'>{EMPTY_LABEL}</span>}</dd>
 
-            <dt className="u-mb4">電話番号</dt>
+            <dt className="u-mb4 c-heading--sm color__70">電話番号</dt>
             <dd className="u-mb16">
-              {customer.tel ? <a href={`tel:${customer.tel}`}>{customer.tel}</a> : <span className='color__70 c-heading--sm'>{EMPTY_LABEL}</span>}
+              {customer.tel ? <span>{customer.tel}</span> : <span className='color__70 c-heading--sm'>{EMPTY_LABEL}</span>}
             </dd>
 
-            <dt className="u-mb4">メールアドレス</dt>
+            <dt className="u-mb4 c-heading--sm color__70">メールアドレス</dt>
             <dd className="u-mb16">
               {customer.mail ? (
-                <a href={`mailto:${customer.mail}`}>{customer.mail}</a>
+                <span>{customer.mail}</span>
               ) : (
                 <span className='color__70 c-heading--sm'>{EMPTY_LABEL}</span>
               )}

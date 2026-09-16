@@ -9,6 +9,8 @@
     margin-block-end:1rem;
   }
   .t-body{
+    background: var(--bg-dark);
+    border-radius: .25rem;
     overflow: auto;
     flex: auto;
     &::-webkit-scrollbar, *::-webkit-scrollbar{
@@ -28,9 +30,10 @@
     }
     .t-table{
       min-width: 40rem;
-      height: 70dvh;
-      overflow: hidden;
       border-radius: .25rem;
+      @include respond-lg{
+        height: 70dvh;
+      }
     }
   }
   .t-foot{

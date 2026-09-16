@@ -40,7 +40,7 @@ export default async function EmployeeDetailPage({
 
   return (
     <>
-      <Header title="自社担当者" />
+      <Header title="自社担当者詳細" />
       <div className={styles.wrapper}>
         <aside>
           <Link href="/employees" className="c-btn__line sm u-mb16">
@@ -51,7 +51,7 @@ export default async function EmployeeDetailPage({
             width={employee.thumbnail?.width ?? 320}
             height={employee.thumbnail?.height ?? 240}
             sizes="(min-width: 1024px) 20rem, 100vw"
-            alt=""
+            alt="サムネイル"
             priority
             unoptimized // 一時的に追加
             className={styles.thumbnail}
@@ -59,10 +59,7 @@ export default async function EmployeeDetailPage({
           <h2 className={styles.title}>{employee.name}</h2>
 
           {employee.profile && (
-            <div className={styles.content}>
-              <h3 className="c-heading--lg u-mb16">プロフィール</h3>
-              <div dangerouslySetInnerHTML={{ __html: employee.profile }} />
-            </div>
+            <div dangerouslySetInnerHTML={{ __html: employee.profile }} />
           )}
         </aside>
 
