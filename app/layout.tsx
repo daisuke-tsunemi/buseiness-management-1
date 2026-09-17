@@ -10,7 +10,7 @@ export const revalidate = 86400;
 // キャッシュの再生成は1日間に1回（デフォは60秒に1回になっているので注意）
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.BASE_URL || 'https://inner-communication.vercel.app'),
+  metadataBase: new URL(process.env.BASE_URL || 'https://buseiness-management-1.vercel.app/'),
   robots: 'noindex, nofollow',
   title: {
     template: '%s | Sample CMS',
