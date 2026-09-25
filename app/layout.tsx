@@ -10,38 +10,32 @@ export const revalidate = 86400;
 // キャッシュの再生成は1日間に1回（デフォは60秒に1回になっているので注意）
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.BASE_URL || 'https://buseiness-management-1.vercel.app/'),
+  metadataBase: new URL(process.env.BASE_URL || 'http://localhost:3000'),
   robots: 'noindex, nofollow',
   title: {
-    template: '%s | Sample CMS',
-    default: 'Sample CMS',
+    template: '%s | 商談・案件管理ダッシュボード',
+    default: '商談・案件管理ダッシュボード',
   },
-  description:
-    'Sample CMSです',
+  description:'商談・案件管理ダッシュボードです',
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
   },
   openGraph: {
     title: {
-      template: '%s | Sample CMS',
-      default: 'Sample CMS',
+      template: '%s | 商談・案件管理ダッシュボード',
+      default: '商談・案件管理ダッシュボード',
     },
-    description:
-      'Sample CMSです',
-    images: ['/ogp.jpg'],
+    description:'商談・案件管理ダッシュボードです',
     type: 'website',
     url: '/',
     locale: 'ja_JP',
-    siteName: 'Sample CMS',
+    siteName: '商談・案件管理ダッシュボード',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Sample CMS',
-    description:
-      'Sample CMSです',
-    images: ['/twitter-image.jpg'],
+    title: '商談・案件管理ダッシュボード',
+    description:'商談・案件管理ダッシュボードです',
   },
 };
 

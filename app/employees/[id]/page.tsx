@@ -52,8 +52,6 @@ export default async function EmployeeDetailPage({
             height={employee.thumbnail?.height ?? 240}
             sizes="(min-width: 1024px) 20rem, 100vw"
             alt="サムネイル"
-            priority
-            unoptimized // 一時的に追加
             className={styles.thumbnail}
           />
           <h2 className={styles.title}>{employee.name}</h2>

@@ -58,9 +58,7 @@ export default async function DealDetailPage({
             width={deal.eyecatch?.width ?? 320}
             height={deal.eyecatch?.height ?? 240}
             sizes="(min-width: 1024px) 20rem, 100vw"
-            alt=""
-            priority
-            unoptimized // 一時的に追加
+            alt="サムネイル"
             className={styles.thumbnail}
           />
           <dl>

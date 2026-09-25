@@ -57,8 +57,6 @@ export default async function ServiceDetailPage({
             height={thumbnail?.height ?? 240}
             sizes="(min-width: 1024px) 20rem, 100vw"
             alt='サムネイル'
-            priority
-            unoptimized // 一時的に追加
             className={styles.thumbnail}
           />
           <div className={`${styles.content} u-align u-gap16`}>

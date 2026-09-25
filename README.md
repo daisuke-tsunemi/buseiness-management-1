@@ -4,8 +4,6 @@ microCMS をデータベースとして使う、**社内向けの商談・案件
 
 「ブログ・コーポレートサイト」ではなく、**業務データを見るための管理画面**をヘッドレス CMS で組む、という使い方に振り切っています。microCMS の管理画面をそのまま入力 UI として使い、フロントは閲覧・集計に専念する構成です。
 
-<!-- TODO: スクリーンショット（ダッシュボード / 一覧 / 詳細）を差し込む -->
-
 ## 何ができるか
 
 | 画面 | 内容 |
@@ -63,8 +61,8 @@ microCMS をデータベースとして使う、**社内向けの商談・案件
 #### 2-1. リポジトリをクローン
 
 ```bash
-git clone https://github.com/your-username/cms-on-vercel.git
-cd cms-on-vercel
+git clone https://github.com/daisuke-tsunemi/buseiness-management-1.git
+cd buseiness-management-1
 npm install
 ```
 

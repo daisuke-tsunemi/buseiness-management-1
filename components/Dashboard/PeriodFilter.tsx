@@ -55,7 +55,7 @@ export default function PeriodFilter({ startValue, label, defaultValue }: Props)
       )}
       <Image
         className={styles.robot}
-        loading='lazy'
+        priority
         src="/img/common/robot_1.webp"
         width={200}
         height={201}
